@@ -1,0 +1,4 @@
+#Mon Feb 27 11:49:14 GMT 2023
+base.0=/Users/kilo/StudioProjects/Registrar_general_prototype/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

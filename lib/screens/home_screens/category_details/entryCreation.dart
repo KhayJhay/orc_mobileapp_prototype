@@ -2459,8 +2459,8 @@ class _EntryCreationDetailsState extends State<EntryCreationDetails> {
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30))),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
             child: SingleChildScrollView(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

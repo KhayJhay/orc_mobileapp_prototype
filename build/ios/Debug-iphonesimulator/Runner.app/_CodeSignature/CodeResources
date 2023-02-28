@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		fa0NiW9psu9hF+BSLtyjJtb9qoQ=
+		Igj8aBv4FnvFHRX8jb+gwwX5uhs=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		26W8V/afonLU2dtNDPSYOgiNWko=
+		m9bjXRp+EXedywtHBNqvxuer6UQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		Cm9TrQhPLR9uZb9E3npJcDXYubk=
+		Wq8QmfozS76LIJTN/rNSEsdJn3Y=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Poppins-Black.ttf</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		naoAzo2rqa8noPGGxJI2kZXQF10=
+		qPYFuWG1F5rHz/0wSWbkhqlGwnY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>
 		<data>
@@ -394,7 +394,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		R/rnabSZpRGW4DAl3nNChH1sPsY=
+		O3xZS+Bj0pei+6PTGdTNQh0dXdI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -477,7 +477,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nQL2Gzi3hleGZz9nC7DWUxD4UAmgkGai/9eU7XA4WFU=
+			TglPWqGkV8bxPfRhivBb0Mq93o957SFH7JJB/HL5qGI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -491,7 +491,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SaputUebHDxWBhUbzh0iKiuqv3tP/2KNRTerranIot0=
+			ZdmiE6UjolUpCj9ZIH7eU3DUrKJPjKsNs3+ftw4DBj4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -512,7 +512,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VU/oI5wMsj/D+H73E8fOlpo5sN3yvmhBFnUajAwKlsU=
+			JmMCYvHzmjXvJ3bsAA7agWiheY8yhqB4HGWy4KcN2VQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/Poppins-Black.ttf</key>
@@ -827,7 +827,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2k4iaslGYPZljBSpR9jit70NMz2JXtngvqBZk0gc2U=
+			G0xiYWHuxG9fKutvDjmIj9kZKDBqEdcyTttFNMkpOTc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/awesome_snackbar_content/assets/back.svg</key>

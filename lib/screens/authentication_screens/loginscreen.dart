@@ -161,40 +161,42 @@ class _Login_PageState extends State<Login_Page> {
                               height: 15,
                             ),
                             InkWell(
-                              onTap: (() {
-                                setState(() {
-                                  isLoading = true;
-                                });
-                                Timer(Duration(seconds: 5), () {
-                                  final snackBar = SnackBar(
-                                    /// need to set following properties for best effect of awesome_snackbar_content
-                                    elevation: 0,
-                                    behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Colors.transparent,
-                                    content: AwesomeSnackbarContent(
-                                      title: 'Login Success',
-                                      message:
-                                          'You have logged in successfully',
-
-                                      /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-                                      contentType: ContentType.success,
-                                    ),
-                                  );
-
-                                  ScaffoldMessenger.of(context)
-                                    ..hideCurrentSnackBar()
-                                    ..showSnackBar(snackBar);
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              LayoutScreen()));
-
+                              onTap: () {
+                                if (keyForm.currentState!.validate()) {
                                   setState(() {
-                                    isLoading = false;
+                                    isLoading = true;
                                   });
-                                });
-                              }),
+                                  Timer(Duration(seconds: 5), () {
+                                    final snackBar = SnackBar(
+                                      /// need to set following properties for best effect of awesome_snackbar_content
+                                      elevation: 0,
+                                      behavior: SnackBarBehavior.floating,
+                                      backgroundColor: Colors.transparent,
+                                      content: AwesomeSnackbarContent(
+                                        title: 'Login Success',
+                                        message:
+                                            'You have logged in successfully',
+
+                                        /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
+                                        contentType: ContentType.success,
+                                      ),
+                                    );
+
+                                    ScaffoldMessenger.of(context)
+                                      ..hideCurrentSnackBar()
+                                      ..showSnackBar(snackBar);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LayoutScreen()));
+
+                                    setState(() {
+                                      isLoading = false;
+                                    });
+                                  });
+                                }
+                              },
                               child: Container(
                                 height: 58,
                                 width: 280,

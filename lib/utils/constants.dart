@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GlobalVars {
-  static const kPrimary = Color(0xFF0D2A47);
+  static const kPrimary = Color(0xFF282565);
   static const kSecondary = Color(0xFF88869f);
   static const kTertiary = Color(0xFF09AB98);
   static const kHeaderstyle =

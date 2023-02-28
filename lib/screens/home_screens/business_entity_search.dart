@@ -532,7 +532,12 @@ class _Business_Search_ScreenState extends State<Business_Search_Screen> {
                                                         ),
                                                       ),
                                                       TextButton(
-                                                        onPressed: (() {}),
+                                                        onPressed: (() {
+                                                          setState(() {
+                                                            isInfoclicked =
+                                                                true;
+                                                          });
+                                                        }),
                                                         child: Container(
                                                           height: 40,
                                                           width: 250,
@@ -566,7 +571,12 @@ class _Business_Search_ScreenState extends State<Business_Search_Screen> {
                                                         ),
                                                       ),
                                                       TextButton(
-                                                        onPressed: (() {}),
+                                                        onPressed: (() {
+                                                          setState(() {
+                                                            isInfoclicked =
+                                                                true;
+                                                          });
+                                                        }),
                                                         child: Container(
                                                           height: 40,
                                                           width: 250,
@@ -600,7 +610,12 @@ class _Business_Search_ScreenState extends State<Business_Search_Screen> {
                                                         ),
                                                       ),
                                                       TextButton(
-                                                        onPressed: (() {}),
+                                                        onPressed: (() {
+                                                          setState(() {
+                                                            isInfoclicked =
+                                                                true;
+                                                          });
+                                                        }),
                                                         child: Container(
                                                           height: 40,
                                                           width: 250,

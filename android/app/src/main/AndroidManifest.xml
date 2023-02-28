@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.prototype.registrar_general_prototype">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
    <application
         android:label="registrar_general_prototype"
         android:name="${applicationName}"

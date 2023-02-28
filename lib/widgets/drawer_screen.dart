@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:registrar_general_prototype/screens/home_screens/contact_page.dart';
+import 'package:registrar_general_prototype/screens/home_screens/help_screen.dart';
 import 'package:registrar_general_prototype/screens/home_screens/mainpage.dart';
 import 'package:registrar_general_prototype/screens/home_screens/search_screen.dart';
 import 'package:registrar_general_prototype/screens/onBoarding_page/getstarted_page.dart';
+import 'package:registrar_general_prototype/screens/onBoarding_page/search_screen.dart';
 import 'package:registrar_general_prototype/utils/constants.dart';
 
 class Drawer_Screen extends StatefulWidget {
@@ -17,13 +19,10 @@ class _Drawer_ScreenState extends State<Drawer_Screen> {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
     return Drawer(
-      backgroundColor: GlobalVars.kPrimary,
+      backgroundColor: GlobalVars.kTertiary,
       child: Container(
         padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/pngs/Hexagon.png'),
-                fit: BoxFit.cover)),
+        decoration: BoxDecoration(),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -227,7 +226,7 @@ void selectedItem(BuildContext context, int index) {
       break;
     case 2:
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => Search_Screen(),
+        builder: (context) => Login_Search_Screen(),
       ));
       break;
     case 3:
@@ -236,9 +235,9 @@ void selectedItem(BuildContext context, int index) {
       ));
       break;
     case 4:
-      // Navigator.of(context).push(MaterialPageRoute(
-      //   builder: (context) => Help_Page(),
-      // ));
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Help_Support_Page(),
+      ));
       break;
     case 5:
       // Navigator.of(context).push(MaterialPageRoute(

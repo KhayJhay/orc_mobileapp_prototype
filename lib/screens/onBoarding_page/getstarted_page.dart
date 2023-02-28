@@ -210,97 +210,82 @@ class _GetStarted_PageState extends State<GetStarted_Page> {
                     topRight: Radius.circular(25))),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Register with ECOWAS Card',
-                      style: GlobalVars.kSecTitleBblack,
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Enter your card number',
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        buildTextField(
-                            ghanaCardController,
-                            CupertinoIcons.creditcard,
-                            "GHA-XXXXXXXXXXXXXXXXXXX-X",
-                            false,
-                            true),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    TextButton(
-                      onPressed: () async {
-                        setState(() {
-                          isLoading = true;
-                        });
-                        if (_formKey.currentState!.validate()) {
-                          setState(() async {
-                            final data =
-                                await GhanaCard_Validation.getCardDetails(
-                                    ghanaCardController.text);
-                            Timer(Duration(seconds: 3), () {
-                              setState(() {
-                                isLoading = false;
-                              });
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) =>
-                                      Register_Screen(data_model: data),
-                                ),
-                              );
-                            });
-                          });
-                        }
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        height: _height <= 820 ? 52 : 60,
-                        width: 280,
-                        decoration: BoxDecoration(
-                            color: GlobalVars.kPrimary,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: isLoading
-                            ? SpinKitPulse(
-                                size: 20,
-                                color: Colors.white,
-                              )
-                            : Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    IconlyLight.shield_done,
-                                    color: Colors.white,
-                                    size: 18,
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    "Validate",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15),
-                                  ),
-                                ],
-                              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Register with ECOWAS Card',
+                    style: GlobalVars.kSecTitleBblack,
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Enter your card number',
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      buildTextField(
+                          ghanaCardController,
+                          CupertinoIcons.creditcard,
+                          "GHA-XXXXXXXXXXXXXXXXXXX-X",
+                          false,
+                          false),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      GhanaCard_Validation.getCardDetails(
+                              ghanaCardController.text, context)
+                          .then((value) {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (_) => Register_Screen(
+                              cardNumber: ghanaCardController.text,
+                            ),
+                          ),
+                        );
+                      });
+                    },
+                    child: Container(
+                      height: _height <= 820 ? 52 : 60,
+                      width: 280,
+                      decoration: BoxDecoration(
+                          color: GlobalVars.kPrimary,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: isLoading
+                          ? SpinKitPulse(
+                              size: 20,
+                              color: Colors.white,
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  IconlyLight.shield_done,
+                                  color: Colors.white,
+                                  size: 18,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "Validate",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ],
+                            ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           );

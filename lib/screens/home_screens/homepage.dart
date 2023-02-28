@@ -8,6 +8,7 @@ import 'package:iconly/iconly.dart';
 import 'package:registrar_general_prototype/screens/home_screens/business_entity_search.dart';
 import 'package:registrar_general_prototype/screens/home_screens/category_details/changeParticulars.dart';
 import 'package:registrar_general_prototype/screens/home_screens/category_details/entryCreation.dart';
+import 'package:registrar_general_prototype/screens/home_screens/category_details/sole_propietorship.dart';
 import 'package:registrar_general_prototype/screens/home_screens/contact_page.dart';
 import 'package:registrar_general_prototype/screens/home_screens/notifications_page.dart';
 import 'package:registrar_general_prototype/screens/home_screens/periodic_filing_page.dart';
@@ -36,6 +37,7 @@ class _HomepageState extends State<Homepage>
   double tranx = 0, transy = 0, scale = 1;
   final List<String> _entityList = [
     'Incorporation of a private\ncompany limited by shares',
+    'Process of registration of\nsole proprietor',
     'Incorporation of a public\ncompany limited by shares',
     'Incorporation of a private\ncompany unlimited by shares',
     'Incorporation of a private\ncompany limited by guarantee',
@@ -44,7 +46,6 @@ class _HomepageState extends State<Homepage>
     'Incorporation of a private\npartnership',
     'Incorporation of a professional\nbody',
     'Registration of an external\n(foreign company)',
-    'Process of reregistration  of\nsole proprietor',
     'Registration of a subsidiary',
   ];
 
@@ -165,7 +166,7 @@ class _HomepageState extends State<Homepage>
                                     },
                                     icon: Icon(
                                       IconlyLight.filter,
-                                      color: GlobalVars.kPrimary,
+                                      color: GlobalVars.kTertiary,
                                       size: 18,
                                     )),
                               ),
@@ -186,7 +187,7 @@ class _HomepageState extends State<Homepage>
                                     },
                                     icon: Icon(
                                       IconlyLight.notification,
-                                      color: GlobalVars.kPrimary,
+                                      color: GlobalVars.kTertiary,
                                       size: 18,
                                     )),
                               ),
@@ -934,28 +935,42 @@ class _HomepageState extends State<Homepage>
                                     const Divider(),
                             itemBuilder: (context, index) {
                               return ListTile(
-                                leading: Icon(
-                                  IconlyBold.info_circle,
-                                  color: GlobalVars.kPrimary,
-                                ),
-                                title: Text(
-                                  _entityList[index],
-                                  style: TextStyle(
-                                    fontFamily: "Poppins-Regular",
-                                    fontSize: 12,
+                                  leading: Icon(
+                                    IconlyBold.info_circle,
+                                    color: GlobalVars.kPrimary,
                                   ),
-                                ),
-                                trailing: Icon(
-                                  Icons.chevron_right,
-                                  color: Colors.grey,
-                                ),
-                                onTap: () => Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            EntryCreationDetails(
-                                              pageTitle: _entityList[index],
-                                            ))),
-                              );
+                                  title: Text(
+                                    _entityList[index],
+                                    style: TextStyle(
+                                      fontFamily: "Poppins-Regular",
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  trailing: Icon(
+                                    Icons.chevron_right,
+                                    color: Colors.grey,
+                                  ),
+                                  onTap: () {
+                                    switch (index) {
+                                      case 0:
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    EntryCreationDetails(
+                                                      pageTitle: _entityList[0],
+                                                    )));
+                                        break;
+                                      case 1:
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    SoleProprietorship_Registration(
+                                                      pageTitle: _entityList[1],
+                                                    )));
+                                        break;
+                                      default:
+                                    }
+                                  });
                             }),
                       )
                     ],
@@ -1306,8 +1321,15 @@ class DashGridCards extends StatelessWidget {
         width: _deviceWidth / 5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(
-              image: AssetImage('assets/pngs/Hexagon.png'), fit: BoxFit.cover),
+          border: Border.all(color: GlobalVars.kPrimary, width: 0.2),
+          color: Colors.white,
+          // boxShadow: <BoxShadow>[
+          //   BoxShadow(
+          //       color: Colors.black54,
+          //       blurRadius: 8,
+          //       spreadRadius: 0.2,
+          //       offset: Offset(0.0, 0.75))
+          // ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -1317,10 +1339,11 @@ class DashGridCards extends StatelessWidget {
                     height: _deviceHeight <= 820 ? 50 : 60,
                     width: _deviceHeight <= 820 ? 50 : 60,
                     decoration: BoxDecoration(
-                        color: Colors.white, shape: BoxShape.circle),
+                        color: GlobalVars.kPrimary, shape: BoxShape.circle),
                     child: Icon(
                       iconData,
                       size: _deviceHeight <= 820 ? 24 : 26,
+                      color: Colors.white,
                     ))),
             SizedBox(
               height: 10,
@@ -1330,8 +1353,8 @@ class DashGridCards extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: _deviceHeight <= 820 ? 10 : 13,
-                  fontFamily: 'Poppins-Medium',
-                  color: Colors.white),
+                  fontFamily: 'Poppins-Light',
+                  color: Colors.black),
             )
           ],
         ),

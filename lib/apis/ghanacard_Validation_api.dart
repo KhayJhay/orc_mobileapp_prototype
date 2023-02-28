@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:registrar_general_prototype/screens/authentication_screens/register_screen.dart';
 import 'dart:convert';
 import '../models/ghanaCard_model.dart';
 
 class GhanaCard_Validation {
-  static Future<Ghanacard_Model> getCardDetails(String cardNumber) async {
+  static Future<Ghanacard_Model> getCardDetails(
+      String cardNumber, BuildContext context) async {
     http.Response response = await http.get(
       Uri.parse(
           "https://staging-api.digitalpayment.online/tin/business/verify/nia/" +
@@ -14,11 +16,14 @@ class GhanaCard_Validation {
             'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSR0QiLCJpc3MiOiJTeXNfQWRtaW4iLCJleHAiOjE3MDgxNzE3OTB9.98PCsdWrWR55kWUSQjcNgt1JmCHJN15TLrBWYmFJlCQ',
       },
     );
+    var responseData = json.decode(response.body);
     if (response.statusCode == 200) {
-      final responseData = json.decode(response.body);
-      return Ghanacard_Model.fromJson(responseData['data']['data']);
+      var cardData = responseData['data']['data'];
+      var cardModel = Ghanacard_Model.fromJson(cardData);
+      return cardModel;
     } else {
-      throw Exception('Failed to fetch data from API');
+      print(responseData['message']);
     }
+    return responseData;
   }
 }
